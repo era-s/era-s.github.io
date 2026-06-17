@@ -1,3 +1,15 @@
 <!-- start custom head snippets -->
 
+<!-- Korean web font: Pretendard (CDN) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+<!-- Pageview counter: busuanzi (loaded only in production builds).
+     To swap to the more reliable vercount mirror, replace the src below with
+     https://cn.vercount.one/js — it uses the same busuanzi_value_* element ids. -->
+{%- if jekyll.environment == "production" -%}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{%- endif -%}
+
 <!-- end custom head snippets -->
