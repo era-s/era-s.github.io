@@ -36,26 +36,23 @@
     "demo-prod": "cross-env JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0 -t --config ./docs/_config.yml",
     "eslint": "eslint \"_includes/**/*.js\"",
     "eslint-fix": "eslint \"_includes/**/*.js\" --fix",
-    "stylelint": "stylelint --syntax scss \"_sass/**/*.scss\"",
-    "stylelint-fix": "stylelint --syntax scss \"_sass/**/*.scss\" --fix",
+    "stylelint": "stylelint \"_sass/**/*.scss\"",
+    "stylelint-fix": "stylelint \"_sass/**/*.scss\" --fix",
     "gem-build": "rm -fv jekyll-text-theme-*.gem && gem build jekyll-text-theme.gemspec",
     "gem-push": "gem push jekyll-text-theme-*.gem"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "cross-env": "^7.0.0",
-    "eslint": "^6.8.0",
-    "husky": "^4.2.1",
-    "stylelint": "^13.0.0",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/js": "^10.0.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "stylelint": "^17.13.0",
+    "stylelint-config-recommended-scss": "^17.0.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1",
+    "stylelint-scss": "^7.2.0"
   }
 }
