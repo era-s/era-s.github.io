@@ -1,3 +1,40 @@
 /* start custom scss snippet */
 
+/* ===== Search result enhancements (snippet + highlight) ===== */
+.page__search-modal {
+  .search-result__item > a.search-result__link {
+    display: block;
+    height: auto;
+    padding: .55rem .75rem;
+    text-align: left;
+    line-height: 1.45;
+    white-space: normal;
+  }
+  .search-result__title {
+    display: block;
+    font-weight: map-get($base, font-weight-bold);
+  }
+  .search-result__snippet {
+    display: block;
+    margin-top: .2rem;
+    font-size: map-get($base, font-size-sm);
+    line-height: 1.5;
+    color: rgba(#fff, .68);
+    word-break: break-word;
+  }
+  mark {
+    padding: 0 .12em;
+    color: #fff;
+    background-color: rgba($main-color-1, .6);
+    border-radius: 3px;
+  }
+}
+
+/* ===== Site / page view counters (busuanzi) ===== */
+.busuanzi-stats {
+  font-size: map-get($base, font-size-sm);
+  opacity: .85;
+  i { margin-right: .15rem; }
+}
+
 /* end custom scss snippet */

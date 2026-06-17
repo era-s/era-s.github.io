@@ -68,10 +68,10 @@
           {%- endif -%}
 
           {%- if _pageview -%}
-            {%- if site.pageview.provider -%}
+            {%- if site.pageview.provider and page.layout == 'article' and include.article.url == page.url -%}
               {%- include snippets/get-locale-string.html key='VIEWS' -%}
               {%- assign _locale_views = __return -%}
-              <li><i class="far fa-eye"></i> <span class="js-pageview" data-page-key="{{ include.article.key }}">0</span> {{ _locale_views }}</li>
+              <li id="busuanzi_container_page_pv" style="display:none"><i class="far fa-eye"></i> <span id="busuanzi_value_page_pv">0</span> {{ _locale_views }}</li>
             {%- endif -%}
           {%- endif -%}
         </ul>
