@@ -16,25 +16,25 @@
 ##############################
 text_skin: custom # "default" (default), "dark", "forest", "ocean", "chocolate", "orange", "custom"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : # the base hostname & protocol for your site e.g. https://www.someone.com
+url     : https://era-s.github.io # the base hostname & protocol for your site
 baseurl : # does not include hostname
-title   : Your Site Title
+title   : era's blog
 description: > # this means to ignore newlines until "Language & timezone"
-  Your Site Description
+  생각과 기록을 남기는 블로그
 
 
 ## => Language and Timezone
 ##############################
-lang: # the language of your site, default as "en"
-timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+lang: ko # the language of your site, default as "en" (set lang: en in a post's front matter for English posts)
+timezone: Asia/Seoul # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 
 ## => Author and Social
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      : era-s
-  url       :
+  name      : era
+  url       : https://era-s.github.io
   avatar    : # path or url of avatar image (square)
   bio       :
   email     :
@@ -47,14 +47,14 @@ author:
   zhihu     : # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
   douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
   linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
-  github    : # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+  github    : era-s # the last part of your profile url, e.g. https://github.com/user_name
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
 repository: era-s.github.io
-repository_tree: master
+repository_tree: main
 
 
 ## => Paths
