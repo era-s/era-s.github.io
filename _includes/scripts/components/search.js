@@ -15,7 +15,7 @@
 
     var $searchBox = null;
     var $searchInput = null;
-    var $searchClear = null;
+    var $searchClear;
 
     function getModalVisible() {
       return modalVisible;

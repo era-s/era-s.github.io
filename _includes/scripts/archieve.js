@@ -3,7 +3,7 @@
   function queryString() {
     // This function is anonymous, is executed immediately and
     // the return value is assigned to QueryString!
-    var i = 0, queryObj = {}, pair;
+    var i, queryObj = {}, pair;
     var queryStr = window.location.search.substring(1);
     var queryArr = queryStr.split('&');
     for (i = 0; i < queryArr.length; i++) {
