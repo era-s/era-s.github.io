@@ -1,4 +1,20 @@
 header:
+  - title: LLM
+    key: llm
+    url: /llm.html
+
+  - title: MI
+    key: mi
+    url: /mi.html
+
+  - title: MLsys
+    key: mlsys
+    url: /mlsys.html
+
+  - title: Architecture
+    key: architecture
+    url: /architecture.html
+
   - titles:
       # @start locale config
       en      : &EN       Archive
