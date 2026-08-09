@@ -26,15 +26,19 @@ titles:
 key: page-about
 ---
 
-안녕하세요, **era**입니다. 👋
+안녕하세요. 👋
 
-이곳은 개발하며 배운 것들과 생각을 기록하고 공유하는 공간입니다.
+이곳은 학습하며 배운 것들과 생각을 기록하고 공유하는 공간입니다.
 
-<!-- TODO: 이 소개글을 본인 이야기로 자유롭게 바꿔주세요. -->
+LLM 아키텍처와 Mechanistic Interpretability에 대한 포스팅과<br>
+떠오르는 생각들, 읽은 책, 시청한 영화에 대한 글을 올릴 계획입니다.
 
 ## 관심사
 
-- (관심 분야를 적어주세요)
+- LLM Architecture
+- Mechanistic Interpretability
+- Computer Architecture
+- LLM Inference
 
 ## 연락처
 
