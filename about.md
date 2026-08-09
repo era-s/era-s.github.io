@@ -30,7 +30,7 @@ key: page-about
 
 이곳은 학습하며 배운 것들과 생각을 기록하고 공유하는 공간입니다.
 
-LLM 아키텍처와 Mechanistic Interpretability에 대한 포스팅과<br>
+LLM 아키텍처와 Mechanistic Interpretability에 대한 포스팅과 <br>
 떠오르는 생각들, 읽은 책, 시청한 영화에 대한 글을 올릴 계획입니다.
 
 ## 관심사
