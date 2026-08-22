@@ -9,6 +9,11 @@
 {%- assign _show_subscribe = __return -%}
 
 {%- include snippets/assign.html
+  target=site.data.variables.default.page.show_edit_on_github
+  source0=layout.show_edit_on_github source1=page.show_edit_on_github -%}
+{%- assign _show_edit_on_github = __return -%}
+
+{%- include snippets/assign.html
   target=site.data.variables.default.page.license
   source0=layout.license source1=page.license -%}
 {%- assign _license = __return -%}
@@ -40,6 +45,26 @@
 
   {%- if _show_subscribe -%}
     <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
+  {%- endif -%}
+
+  {%- if _show_edit_on_github and site.repository and site.repository_tree -%}
+    {%- include snippets/is_collection.html page=page -%}
+    {%- assign _is_article_collection = __return -%}
+    {%- include snippets/get-locale-string.html key='POST_ON_GITHUB' -%}
+    {%- assign _locale_post_on_github = __return -%}
+    {%- if _is_article_collection -%}
+      {%- include snippets/prepend-path.html path=page.path prepend_path=site.collections_dir -%}
+      {%- assign _article_path = __return -%}
+    {%- else -%}
+      {%- assign _article_path = page.path -%}
+    {%- endif -%}
+    {%- assign _github_path = site.repository | append: '/tree/' | append: site.repository_tree | append: '/' | append: _article_path | replace:'//','/' -%}
+    <div class="article__github d-print-none">
+      <a class="button button--outline-secondary button--rounded button--sm"
+        title="{{ _locale_post_on_github }}"
+        href="https://github.com/{{ _github_path }}">
+        <i class="fab fa-github"></i> {{ _locale_post_on_github }}</a>
+    </div>
   {%- endif -%}
 
   {%- if _license != false -%}

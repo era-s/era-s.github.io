@@ -3,6 +3,10 @@
   font-size: map-get($base, font-size-sm);
 }
 
+.article__github {
+  margin: map-get($spacers, 3) 0;
+}
+
 .article__license, .article__subscribe {
   a {
     @include link-colors($text-color, $main-color-1);
