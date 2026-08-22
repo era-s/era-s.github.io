@@ -205,12 +205,26 @@ done
 지연 시간이 측정값에 반영되기 시작한다. 전체 범위를 한눈에 보기 위해
 가로축은 로그 스케일로 표시했다.
 
-![Intel Xeon E-2388G의 버퍼 크기별 메모리 지연 시간](/assets/images/posts/memory-latency-check/memory-hierarchy-xeon.png)
+### Intel Xeon E-2388G
+
+<div class="memory-chart-grid" role="group" aria-label="Intel Xeon E-2388G 메모리 계층 측정 결과">
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-overview.png" alt="Intel 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l1-l2.png" alt="Intel 시스템의 L1과 L2 경계 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l2-llc.png" alt="Intel 시스템의 L2와 LLC 경계 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-llc-dram.png" alt="Intel 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
+</div>
 
 *Intel 시스템에서는 약 1 ns였던 L1 구간이 L2, LLC, DRAM으로 내려가며
 단계적으로 증가한다.*
 
-![AMD EPYC 9354의 버퍼 크기별 메모리 지연 시간](/assets/images/posts/memory-latency-check/memory-hierarchy-epyc.png)
+### AMD EPYC 9354
+
+<div class="memory-chart-grid" role="group" aria-label="AMD EPYC 9354 메모리 계층 측정 결과">
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-overview.png" alt="AMD 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l1-l2.png" alt="AMD 시스템의 L1과 L2 경계 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l2-llc.png" alt="AMD 시스템의 L2와 LLC 경계 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-llc-dram.png" alt="AMD 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
+</div>
 
 *AMD 시스템에서도 캐시 용량 경계 부근에서 같은 형태의 변곡점이 나타난다.*
 
@@ -251,7 +265,10 @@ AMD 시스템을 NPS4로 구성하고 local 메모리와 세 remote 메모리의
 시간을 비교했다. 작업 집합이 LLC 안에 들어가는 구간에서는 차이가 작지만,
 LLC를 벗어나면 local과 remote 사이의 간격이 벌어진다.
 
-![NUMA local 및 remote 메모리의 랜덤·순차 접근 지연 시간](/assets/images/posts/memory-latency-check/numa-local-remote.png)
+<div class="memory-chart-grid" role="group" aria-label="AMD NUMA local 및 remote 메모리 지연 시간">
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/numa-random.png" alt="AMD NUMA local 및 remote 메모리의 랜덤 접근 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/numa-ordered.png" alt="AMD NUMA local 및 remote 메모리의 순차 접근 지연 시간"></figure>
+</div>
 
 256 MiB 작업 집합에서 랜덤 접근은 local 101.8 ns, 가장 느린 remote
 112.667 ns였다. 순차 접근도 local 102 ns, 가장 느린 remote 113.367 ns로
@@ -275,20 +292,34 @@ stride는 연속된 두 접근 사이의 바이트 간격이다. 두 시스템�
 L1 안에서는 두 시스템 모두 stride에 따른 변화가 거의 없었다. 반면 L2부터
 DRAM까지는 뚜렷한 전환점이 나타났다.
 
+### Intel Xeon E-2388G
+
+<div class="memory-chart-grid" role="group" aria-label="Intel Xeon E-2388G stride별 지연 시간">
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-l1.png" alt="Intel 시스템의 L1 stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-l2.png" alt="Intel 시스템의 L2 stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-llc.png" alt="Intel 시스템의 LLC stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-dram.png" alt="Intel 시스템의 DRAM stride별 지연 시간"></figure>
+</div>
+
 Intel 시스템의 L2에서는 stride 8 B일 때 순차 접근 지연 시간이 랜덤 접근의
 약 40% 수준이었다. 그러나 stride 256 B에서 순차 접근 지연 시간이 급증해
 랜덤 접근보다 느려지는 반전이 나타났다. 512 B 이상에서 두 접근 방식의
 지연 시간이 소폭 내려간 것은 cache set 충돌이나 TLB 효과일 가능성이 있지만,
 이번 실험만으로 원인을 확정할 수는 없다.
 
-![Intel 시스템의 LLC와 DRAM stride별 지연 시간](/assets/images/posts/memory-latency-check/stride-xeon-llc-dram.png)
-
 Intel 시스템의 LLC에서는 순차 접근이 stride 128 B 이하일 때 약 1~3 ns로
 유지됐지만, 256 B부터 12~14 ns 수준으로 급증했다. DRAM에서도 256 B 부근에
 같은 변곡점이 나타났다. 다만 DRAM 구간에서는 순차 접근이 전체적으로 랜덤
 접근보다 낮은 지연 시간을 유지했다.
 
-![AMD 시스템의 LLC와 DRAM stride별 지연 시간](/assets/images/posts/memory-latency-check/stride-epyc-llc-dram.png)
+### AMD EPYC 9354
+
+<div class="memory-chart-grid" role="group" aria-label="AMD EPYC 9354 stride별 지연 시간">
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-l1.png" alt="AMD 시스템의 L1 stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-l2.png" alt="AMD 시스템의 L2 stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-llc.png" alt="AMD 시스템의 LLC stride별 지연 시간"></figure>
+  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-dram.png" alt="AMD 시스템의 DRAM stride별 지연 시간"></figure>
+</div>
 
 AMD 시스템에서는 순차 접근의 전환점이 더 이르게 나타났다. stride 64 B
 이하에서는 L2부터 DRAM까지 약 1 ns에 가까운 유효 접근 비용이 측정됐지만,
@@ -300,10 +331,19 @@ AMD 시스템에서는 순차 접근의 전환점이 더 이르게 나타났다.
 여러 요청이 겹쳐 실행되므로, 벤치마크에 보이는 평균 유효 비용이 크게
 낮아진 것이다.
 
-![프리페처 활성화 상태의 버퍼 크기별 랜덤·순차 접근 지연 시간](/assets/images/posts/memory-latency-check/prefetcher-enabled.png)
+<div class="memory-chart-grid" role="group" aria-label="프리페처 활성화 상태의 버퍼 크기별 지연 시간">
+  <figure>
+    <img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/prefetch-xeon.png" alt="프리페처를 활성화한 Intel 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
+    <figcaption>Intel Xeon E-2388G</figcaption>
+  </figure>
+  <figure>
+    <img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/prefetch-epyc.png" alt="프리페처를 활성화한 AMD 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
+    <figcaption>AMD EPYC 9354</figcaption>
+  </figure>
+</div>
 
-*위 그래프는 Intel, 아래 그래프는 AMD 시스템이다. 큰 작업 집합에서도
-순차 접근은 프리페처가 숨긴 지연 시간 덕분에 랜덤 접근보다 훨씬 낮다.*
+*두 시스템 모두 큰 작업 집합에서 순차 접근이 랜덤 접근보다 훨씬 낮다.
+프리페처가 메모리 지연 시간의 상당 부분을 숨긴 결과다.*
 
 1 GiB 순차 접근에서는 Intel이 3.777 ns, AMD가 1.6 ns로 측정됐다. 이 값은
 AMD의 순차 접근 경로가 이번 패턴에서 더 적극적으로 지연을 숨겼음을 보여준다.
