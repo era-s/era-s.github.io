@@ -360,7 +360,9 @@ AMD의 순차 접근 경로가 이번 패턴에서 더 적극적으로 지연을
 마지막으로 `multichase`의 `pingpong`을 사용해 수정된 64 B 캐시라인의
 소유권을 두 코어가 번갈아 가져올 때의 평균 지연 시간을 측정했다.
 
-![AMD EPYC 9354의 Intra-CCD 및 Inter-CCD 캐시라인 이동 지연 시간](/assets/images/posts/memory-latency-check/ccd-pingpong.png)
+<figure class="memory-chart-single">
+  <img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/ccd-pingpong.png" alt="AMD EPYC 9354의 Intra-CCD 및 Inter-CCD 캐시라인 이동 지연 시간">
+</figure>
 
 - 같은 CCD 안의 코어 조합: 90.633~101.967 ns
 - 서로 다른 CCD의 코어 조합: 약 173.7 ns
