@@ -208,10 +208,10 @@ done
 ### Intel Xeon E-2388G
 
 <div class="memory-chart-grid" role="group" aria-label="Intel Xeon E-2388G 메모리 계층 측정 결과">
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-overview.png" alt="Intel 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l1-l2.png" alt="Intel 시스템의 L1과 L2 경계 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l2-llc.png" alt="Intel 시스템의 L2와 LLC 경계 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-llc-dram.png" alt="Intel 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-overview.png" alt="Intel 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l1-l2.png" alt="Intel 시스템의 L1과 L2 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-l2-llc.png" alt="Intel 시스템의 L2와 LLC 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-xeon-llc-dram.png" alt="Intel 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
 </div>
 
 *Intel 시스템에서는 약 1 ns였던 L1 구간이 L2, LLC, DRAM으로 내려가며
@@ -220,10 +220,10 @@ done
 ### AMD EPYC 9354
 
 <div class="memory-chart-grid" role="group" aria-label="AMD EPYC 9354 메모리 계층 측정 결과">
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-overview.png" alt="AMD 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l1-l2.png" alt="AMD 시스템의 L1과 L2 경계 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l2-llc.png" alt="AMD 시스템의 L2와 LLC 경계 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-llc-dram.png" alt="AMD 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-overview.png" alt="AMD 시스템의 버퍼 크기별 전체 메모리 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l1-l2.png" alt="AMD 시스템의 L1과 L2 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-l2-llc.png" alt="AMD 시스템의 L2와 LLC 경계 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/hierarchy-epyc-llc-dram.png" alt="AMD 시스템의 LLC와 DRAM 경계 지연 시간"></figure>
 </div>
 
 *AMD 시스템에서도 캐시 용량 경계 부근에서 같은 형태의 변곡점이 나타난다.*
@@ -266,8 +266,8 @@ AMD 시스템을 NPS4로 구성하고 local 메모리와 세 remote 메모리의
 LLC를 벗어나면 local과 remote 사이의 간격이 벌어진다.
 
 <div class="memory-chart-grid" role="group" aria-label="AMD NUMA local 및 remote 메모리 지연 시간">
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/numa-random.png" alt="AMD NUMA local 및 remote 메모리의 랜덤 접근 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/numa-ordered.png" alt="AMD NUMA local 및 remote 메모리의 순차 접근 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/numa-random.png" alt="AMD NUMA local 및 remote 메모리의 랜덤 접근 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/numa-ordered.png" alt="AMD NUMA local 및 remote 메모리의 순차 접근 지연 시간"></figure>
 </div>
 
 256 MiB 작업 집합에서 랜덤 접근은 local 101.8 ns, 가장 느린 remote
@@ -295,10 +295,10 @@ DRAM까지는 뚜렷한 전환점이 나타났다.
 ### Intel Xeon E-2388G
 
 <div class="memory-chart-grid" role="group" aria-label="Intel Xeon E-2388G stride별 지연 시간">
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-l1.png" alt="Intel 시스템의 L1 stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-l2.png" alt="Intel 시스템의 L2 stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-llc.png" alt="Intel 시스템의 LLC stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-xeon-dram.png" alt="Intel 시스템의 DRAM stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-xeon-l1.png" alt="Intel 시스템의 L1 stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-xeon-l2.png" alt="Intel 시스템의 L2 stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-xeon-llc.png" alt="Intel 시스템의 LLC stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-xeon-dram.png" alt="Intel 시스템의 DRAM stride별 지연 시간"></figure>
 </div>
 
 Intel 시스템의 L2에서는 stride 8 B일 때 순차 접근 지연 시간이 랜덤 접근의
@@ -315,10 +315,10 @@ Intel 시스템의 LLC에서는 순차 접근이 stride 128 B 이하일 때 약 
 ### AMD EPYC 9354
 
 <div class="memory-chart-grid" role="group" aria-label="AMD EPYC 9354 stride별 지연 시간">
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-l1.png" alt="AMD 시스템의 L1 stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-l2.png" alt="AMD 시스템의 L2 stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-llc.png" alt="AMD 시스템의 LLC stride별 지연 시간"></figure>
-  <figure><img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/stride-epyc-dram.png" alt="AMD 시스템의 DRAM stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-epyc-l1.png" alt="AMD 시스템의 L1 stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-epyc-l2.png" alt="AMD 시스템의 L2 stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-epyc-llc.png" alt="AMD 시스템의 LLC stride별 지연 시간"></figure>
+  <figure><img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/stride-epyc-dram.png" alt="AMD 시스템의 DRAM stride별 지연 시간"></figure>
 </div>
 
 AMD 시스템에서는 순차 접근의 전환점이 더 이르게 나타났다. stride 64 B
@@ -333,11 +333,11 @@ AMD 시스템에서는 순차 접근의 전환점이 더 이르게 나타났다.
 
 <div class="memory-chart-grid" role="group" aria-label="프리페처 활성화 상태의 버퍼 크기별 지연 시간">
   <figure>
-    <img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/prefetch-xeon.png" alt="프리페처를 활성화한 Intel 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
+    <img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/prefetch-xeon.png" alt="프리페처를 활성화한 Intel 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
     <figcaption>Intel Xeon E-2388G</figcaption>
   </figure>
   <figure>
-    <img loading="lazy" decoding="async" src="/assets/images/posts/memory-latency-check/prefetch-epyc.png" alt="프리페처를 활성화한 AMD 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
+    <img decoding="async" width="1000" height="600" src="/assets/images/posts/memory-latency-check/prefetch-epyc.png" alt="프리페처를 활성화한 AMD 시스템의 버퍼 크기별 랜덤 및 순차 접근 지연 시간">
     <figcaption>AMD EPYC 9354</figcaption>
   </figure>
 </div>
