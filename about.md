@@ -35,10 +35,10 @@ LLM 아키텍처와 Mechanistic Interpretability에 대한 포스팅과 <br>
 
 ## 관심사
 
+- LLM Inference
 - LLM Architecture
 - Mechanistic Interpretability
 - Computer Architecture
-- LLM Inference
 
 ## 연락처
 
