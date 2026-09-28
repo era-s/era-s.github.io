@@ -63,7 +63,7 @@ $t$는 토큰 위치, $\ell$은 레이어 번호입니다. $e_t$는 해당 토�
 가로축은 768개 벡터 좌표, 세로축은 토큰입니다. 큰 값과 작은 값을 함께 볼 수 있도록 색에는 부호를 보존하는 로그 변환을 적용했습니다.
 
 $$
-c(\Delta)=\operatorname{sign}(\Delta)\log_{10}(1+|\Delta|).
+c(\Delta)=\operatorname{sign}(\Delta)\log_{10}(1+\lvert\Delta\rvert).
 $$
 
 모든 레이어에 같은 색 범위를 사용합니다. 색 막대와 마우스를 올렸을 때 나타나는 수치는 변환 전의 변화량입니다.
@@ -334,10 +334,10 @@ $AB$와 $BA$의 0이 아닌 고윳값은 같으므로, $768\times768$ 행렬 대
 두 번째 그림은 [원 논문의 원형 산점도](https://transformer-circuits.pub/2021/framework/index.html#copying-matrix) 형식을 따라 전체 레이어와 헤드를 펼쳐 놓은 것입니다. 행은 레이어, 열은 헤드입니다. 점 하나가 0이 아닌 고윳값 하나에 대응하며, 다음 좌표로 표시합니다.
 
 $$
-\theta=\arg(\lambda),\qquad \rho=\log_{10}|\lambda|+C.
+\theta=\arg(\lambda),\qquad \rho=\log_{10}\lvert\lambda\rvert+C.
 $$
 
-$\arg(\lambda)$는 복소평면에서의 각도입니다. 양의 실수는 오른쪽, 음의 실수는 왼쪽에 놓입니다. 반지름에는 크기의 로그를 사용하고, 공통 상수 $C$를 더해 양수로 옮깁니다. 동심원의 눈금은 원래 크기 $|\lambda|$를 나타냅니다. 모든 칸에 같은 척도를 적용했으며, 주황색은 양의 실수 고윳값, 파란색은 나머지 고윳값입니다.
+$\arg(\lambda)$는 복소평면에서의 각도입니다. 양의 실수는 오른쪽, 음의 실수는 왼쪽에 놓입니다. 반지름에는 크기의 로그를 사용하고, 공통 상수 $C$를 더해 양수로 옮깁니다. 동심원의 눈금은 원래 크기 $\lvert\lambda\rvert$를 나타냅니다. 모든 칸에 같은 척도를 적용했으며, 주황색은 양의 실수 고윳값, 파란색은 나머지 고윳값입니다.
 
 ![전체 12개 레이어와 12개 헤드의 OV 고윳값](/assets/posts/gpt2-circuits-residual-stream/ov-eigenspectra.svg)
 
