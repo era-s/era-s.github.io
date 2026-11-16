@@ -1,8 +1,4 @@
 header:
-  - title: LLM
-    key: llm
-    url: /llm.html
-
   - title: MI
     key: mi
     url: /mi.html

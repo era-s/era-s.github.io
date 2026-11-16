@@ -40,6 +40,11 @@ LLM 아키텍처와 Mechanistic Interpretability에 대한 포스팅과 <br>
 - Mechanistic Interpretability
 - Computer Architecture
 
+## 발표
+
+발표한 슬라이드는 [era-s/talks](https://github.com/era-s/talks)에 모아 두었습니다.
+
 ## 연락처
 
 - GitHub — [@era-s](https://github.com/era-s)
+- LinkedIn — [era-s](https://www.linkedin.com/in/era-s)
